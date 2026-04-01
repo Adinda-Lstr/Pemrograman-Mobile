@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.Diceroller_xml" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#BBADFF</item>
-        <item name="colorPrimaryDark">#9A8BFF</item>
-        <item name="colorAccent">#E1BEE7</item>
-    </style>
-</resources>
