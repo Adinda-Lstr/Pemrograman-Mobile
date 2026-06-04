@@ -1,4 +1,4 @@
-package com.example.scrollablelistcompose.data
+package com.example.scrollablelistcompose.feature.movie.data.remote
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -14,14 +14,9 @@ data class MovieDto(
     val title: String,
     @SerialName("poster_path")
     val posterPath: String? = null,
-    val overview: String? = null
-) {
-    fun toEntity(): MovieEntity {
-        return MovieEntity(
-            id = id,
-            title = title,
-            posterPath = posterPath ?: "",
-            overview = overview ?: ""
-        )
-    }
-}
+    val overview: String? = null,
+    @SerialName("release_date")
+    val releaseDate: String? = null,
+    @SerialName("vote_average")
+    val voteAverage: Double? = null
+)

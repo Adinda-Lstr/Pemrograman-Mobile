@@ -1,4 +1,14 @@
 package com.example.scrollablelistcompose.core.network
 
-class SafeApiCall {
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+suspend fun <T> safeApiCall(apiCall: suspend () -> T): ApiResult<T> {
+    return withContext(Dispatchers.IO) {
+        try {
+            ApiResult.Success(apiCall.invoke())
+        } catch (e: Exception) {
+            ApiResult.Error(e.message ?: "Terjadi kesalahan jaringan")
+        }
+    }
 }
